@@ -15,7 +15,7 @@ function takesnapshot(){
     });
 }
 console.log('ml5 version:',ml5.version);
-classifier=ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/zbhUG3u9Y/",modelLoaded);
+classifier=ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/zbhUG3u9Y/model.json",modelLoaded);
 function speak(){
      var synth=window.speechSynthesis;
      speak_1="first prediction is"+prediction1;
@@ -57,4 +57,7 @@ function gotResults(error,results){
         document.getElementById("update_emoji2").innerHTML="&#128545;";
     }
     }
+}
+function modelLoaded(){
+    console.log("model Loaded!");
 }
